@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Hyper - Responsive Bootstrap 4 Admin Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- App css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div class="wrapper">
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    @@include('./partials/topbar.html')
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">UI Kit</a></li>
+                                            <li class="breadcrumb-item active">Modals</li>
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">Modals</h4>
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title --> 
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        
+                                        <h4 class="header-title">Bootstrap Modals (default)</h4>
+
+                                        <p class="text-muted">
+                                            A rendered modal with header, body, and set of actions in the footer.
+                                        </p>
+    
+                                        <!-- sample modal content -->
+                                        <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title" id="myModalLabel">Modal Heading</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h6>Text in a modal</h6>
+                                                        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                                                        <hr>
+                                                        <h6>Overflowing text to show scroll behavior</h6>
+                                                        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                                                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                                                        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+    
+                                        <!--  Modal content for the above example -->
+                                        <div class="modal fade" id="bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title" id="myLargeModalLabel">Large modal</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        ...
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+    
+                                        <div class="modal fade" id="bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title" id="mySmallModalLabel">Small modal</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        ...
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+   
+                                        
+                                        <div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-labelledby="myCenterModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title" id="myCenterModalLabel">Center modal</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h5>Overflowing text to show scroll behavior</h5>
+                                                        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                                                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+
+                                        <div class="button-list">
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Standard Modal</button>
+                                            <!-- Large modal -->
+                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#bs-example-modal-lg">Large modal</button>
+                                            <!-- Small modal -->
+                                            <button  type="button" class="btn btn-success" data-toggle="modal" data-target="#bs-example-modal-sm">Small modal</button>
+                                            <!-- Center modal -->
+                                            <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#centermodal">Center modal</button>
+                                        </div>
+
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+                        </div> <!-- end row-->
+
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title">Modal with Pages</h4>
+
+                                        <p class="text-muted">
+                                            Examples of custom modals.
+                                        </p>
+    
+                                        <!-- Signup modal content -->
+                                        <div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+    
+                                                    <div class="modal-body">
+                                                        <div class="text-center mt-2 mb-4">
+                                                            <a href="index.html" class="text-success">
+                                                                <span><img src="assets/images/logo-dark.png" alt="" height="18"></span>
+                                                            </a>
+                                                        </div>
+    
+                                                        <form class="pl-3 pr-3" action="#">
+    
+                                                            <div class="form-group">
+                                                                <label for="username">Name</label>
+                                                                <input class="form-control" type="email" id="username" required="" placeholder="Michael Zenaty">
+                                                            </div>
+    
+                                                            <div class="form-group">
+                                                                <label for="emailaddress">Email address</label>
+                                                                <input class="form-control" type="email" id="emailaddress" required="" placeholder="john@deo.com">
+                                                            </div>
+    
+                                                            <div class="form-group">
+                                                                <label for="password">Password</label>
+                                                                <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                                                            </div>
+    
+                                                            <div class="form-group">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                                    <label class="custom-control-label" for="customCheck1">I accept <a href="#">Terms and Conditions</a></label>
+                                                                </div> 
+                                                            </div>
+    
+                                                            <div class="form-group text-center">
+                                                                <button class="btn btn-primary" type="submit">Sign Up Free</button>
+                                                            </div>
+    
+                                                        </form>
+    
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+    
+    
+                                        <!-- SignIn modal content -->
+                                        <div id="login-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <div class="text-center mt-2 mb-4">
+                                                            <a href="index.html" class="text-success">
+                                                                <span><img src="assets/images/logo-dark.png" alt="" height="18"></span>
+                                                            </a>
+                                                        </div>
+    
+                                                        <form action="#" class="pl-3 pr-3">
+    
+                                                            <div class="form-group">
+                                                                <label for="emailaddress1">Email address</label>
+                                                                <input class="form-control" type="email" id="emailaddress1" required="" placeholder="john@deo.com">
+                                                            </div>
+    
+                                                            <div class="form-group">
+                                                                <label for="password1">Password</label>
+                                                                <input class="form-control" type="password" required="" id="password1" placeholder="Enter your password">
+                                                            </div>
+    
+                                                            <div class="form-group">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                                    <label class="custom-control-label" for="customCheck2">Remember me</label>
+                                                                </div>
+                                                            </div>
+    
+                                                            <div class="form-group text-center">
+                                                                <button class="btn btn-rounded btn-primary" type="submit">Sign In</button>
+                                                            </div>
+    
+                                                        </form>
+    
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+    
+                                        <div class="button-list">
+                                            <!-- Custom width modal -->
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-modal">Sign Up Modal</button>
+                                            <!-- Full width modal -->
+                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#login-modal">Log in Modal</button>
+                                        </div>
+
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+                        </div> <!-- end row-->
+                        
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+
+        @@include('./partials/right-sidebar.html')
+
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+    </body>
+</html>
