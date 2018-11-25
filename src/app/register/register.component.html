@@ -1,0 +1,47 @@
+<div class="wrapper">
+	<div class="account-pages mt-5 mb-5">
+		<div class="content">
+			<div class="account-pages mt-5 mb-5">
+				<div class="row justify-content-center">
+					<div class="col-lg-4">
+						<div class="card">
+							<div class="card-header pt-4 pb-4 text-center bg-primary">
+								<a routerLink="/"><span><img src="assets/images/logo_cx.png" alt="" height="18"></span></a>
+							</div>
+
+							<div class="card-body p-4">
+								<ng-template [ngIf]="error">
+								<div class="alert alert-danger" role="alert">{{ error }}</div>
+								</ng-template>
+
+								<form #registerForm="ngForm" action="/register/" method="post" (ngSubmit)="onSubmit()">
+									<div class="form-group mb-3">
+										<label for="name">Full Name</label>
+										<input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+									</div>
+									<div class="form-group mb-3">
+										<label for="email">Email</label>
+										<input type="email" class="form-control" id="email" required [(ngModel)]="model.email" name="email">
+									</div>
+									<div class="form-group mb-3">
+										<label for="id_username">Username</label>
+										<input type="text" class="form-control" id="username" required [(ngModel)]="model.username" name="username">
+									</div>
+									<div class="form-group mb-3">
+										<label for="password">Password</label>
+										<input type="password" class="form-control" id="password" required [(ngModel)]="model.password" name="password">
+									</div>
+									<div class="form-group mb-0 text-center">
+										<input type="submit" class="btn btn-primary" value="Submit" [disabled]="!registerForm.form.valid">
+									</div>
+								</form>
+							</div>
+						</div>
+
+						<div class="text-center mt-5">Already Registered? <a routerLink="/">Login</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

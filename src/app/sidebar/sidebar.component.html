@@ -1,0 +1,49 @@
+<!-- ========== Left Sidebar Start ========== -->
+<div class="left-side-menu">
+	<div class="slimscroll-menu">
+
+		<!-- LOGO -->
+		<a routerLink="/dashboard" class="logo text-center">
+			<span class="logo-lg">
+				<img src="assets/images/logo_cx.png" alt="" height="24">
+			</span>
+			<span class="logo-sm">
+				<img src="assets/images/logo_sm.png" alt="" height="16">
+			</span>
+		</a>
+
+		<!--- Sidemenu -->
+		<ul class="metismenu side-nav">
+
+			<li class="side-nav-title side-nav-item">Navigation</li>
+
+			<li class="side-nav-item">
+				<a routerLink="/dashboard" class="side-nav-link">
+					<i class="dripicons-meter"></i>
+					<!--<span class="badge badge-success float-right">7</span>-->
+					<span> Dashboard </span>
+				</a>
+			</li>
+
+			<li *ngFor="let menu of menus;" class="side-nav-item">
+				<a href="javascript: void(0);" class="side-nav-link">
+					<i class="dripicons-browser"></i>
+					<span> {{ menu.name }} </span>
+					<span class="menu-arrow"></span>
+				</a>
+				<ul class="side-nav-second-level collapse" aria-expanded="false">
+					<li *ngFor="let submenu of menu.menu;">
+						<a routerLink="/{{ submenu.href }}">{{ submenu.name }}</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<!-- End Sidebar -->
+
+		<div class="clearfix"></div>
+
+	</div>
+	<!-- Sidebar -left -->
+
+</div>
+<!-- Left Sidebar End -->

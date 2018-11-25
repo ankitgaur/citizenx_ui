@@ -1,0 +1,17 @@
+<ng-template [ngIf]="login"><app-sidebar></app-sidebar></ng-template>
+
+<div class="{{ login ? 'content-page' : 'account-pages mt-5 mb-5' }}">
+	<div class="content">
+		<ng-template [ngIf]="login"><app-header></app-header></ng-template>
+		<!-- Start Content-->
+		<div class="container-fluid">
+			<router-outlet></router-outlet>
+		</div>
+		<!-- container -->
+
+	</div>
+	<!-- content -->
+
+	<app-footer></app-footer>
+
+</div>
