@@ -34,7 +34,6 @@ export class RegisterComponent implements OnInit {
 
 		this.data.userRegister(this.model).subscribe(
 			data => {
-				console.log(data);
 				if (typeof data['status'] !== 'undefined' && data['status']) {
 					this.router.navigate(['/']);
 				} else {

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 	bodyClass = 'authentication-bg';
 	submitted = false;
+	
 	model = {
 		username: '',
 		password: ''

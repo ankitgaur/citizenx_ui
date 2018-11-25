@@ -18,7 +18,7 @@ export class SidebarComponent implements OnInit {
 
 	ngOnInit() {
 		this.route.events.subscribe(params => {
-			if (params.constructor.name == 'NavigationEnd') {
+			if (params['shouldActivate']) {
 				let explodes = params['url'].split('/');
 
 				if (explodes[1] == 'category') {
