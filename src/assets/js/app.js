@@ -24117,3 +24117,11 @@ Object.defineProperty(window, 'initmenu', {
 		}, 1000);
 	}
 });
+
+Object.defineProperty(window, 'showincidentmodal', {
+	set: function(v) {
+		setTimeout(function() {
+			$('#incident-modal').modal('show')
+		}, 100);
+	}
+});

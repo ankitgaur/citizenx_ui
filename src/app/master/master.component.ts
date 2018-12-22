@@ -9,6 +9,9 @@ import { DataService } from '../data.service';
 })
 export class MasterComponent implements OnInit {
 	component:string;
+	incidentInfo = {
+		incident: {}
+	};
 
 	incidents = {
 		incident_count: 0,
@@ -110,7 +113,7 @@ export class MasterComponent implements OnInit {
 			this.data.getIncidents({
 				[incidenType]: this.component,
 				...filters,
-				'distinct': 'user'
+				'distinct': 'user_id'
 			}).subscribe(
 				data => {
 					this.incidents.user_count = 'total' in data ? data['total'] : 0;
@@ -168,6 +171,7 @@ export class MasterComponent implements OnInit {
 			this.data.getIncidents({
 				[incidenType]: this.component,
 				...filters,
+				'distinct': 'user',
 				'date_range': `${d.getTime()}-${new Date(d.getFullYear(), d.getMonth(), (d.getDate() - d.getDay() - 7)).getTime()}`,
 				'groupby': 'day',
 			}).subscribe(
@@ -228,6 +232,58 @@ export class MasterComponent implements OnInit {
 					}
 				}
 			);
+
+			// Year Chart By User
+			this.data.getIncidents({
+				[incidenType]: this.component,
+				...filters,
+				'distinct': 'user_id',
+				'date_range': `${d.getTime()}-${new Date(d.getFullYear() - 1, 0, 1).getTime()}`,
+				'groupby': 'month',
+			}).subscribe(
+				data => {
+					let totalCurrentMonthUsers = 0;
+					let totalPreviousMonthUsers = 0;
+
+					if (data !== null) {
+						for (let v of data['data']) {
+							let explode = v.month.createdMonthYear.split('-');
+							v.total = v.distinct_value.length
+
+							if (explode[0] == d.getFullYear() && explode[1] == (d.getMonth() + 1)) {
+								totalCurrentMonthUsers = v.total;
+							}
+
+							if (explode[0] == d.getFullYear() && explode[1] == d.getMonth()) {
+								totalPreviousMonthUsers = v.total;
+							}
+
+							if (explode[0] == d.getFullYear()) {
+								this.yearChart.current[explode[1] - 1] = v.total;
+								this.yearChart.current_total += v.total;
+							} else if (explode[0] == (d.getFullYear() - 1)) {
+								this.yearChart.previous[explode[1] - 1] = v.total;
+								this.yearChart.previous_total += v.total;
+							}
+						}
+
+						this.incidents.user_count_change = parseInt(((totalCurrentMonthUsers - totalPreviousMonthUsers) / (totalPreviousMonthUsers == 0 ? 1 : totalPreviousMonthUsers) * 100).toFixed(2));
+					}
+				}
+			);
 		});
+	}
+
+	getIncident(incidenId) {
+		this.data.getIncident(incidenId).subscribe(
+			data => {
+				if (data !== null && data['status'] && data['data']) {
+					this.incidentInfo.incident = data['data'];
+
+					window['showincidentmodal'] = true;
+				}
+			}
+		);
+
 	}
 }

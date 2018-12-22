@@ -27,4 +27,8 @@ export class DataService {
 	getIncidents(filter = {}) {
 		return this.http.post(`${environment.apiEndPoint}getincidents/`, filter);
 	}
+
+	getIncident(incidenId) {
+		return this.http.get(`${environment.apiEndPoint}incident/${incidenId}/`);
+	}
 }
